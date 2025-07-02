@@ -1,0 +1,323 @@
+/* === Global Styles === */
+* {
+	font-size: 12px;
+	font-weight: 500;
+	font-family: "JetBrainsMono NFP";
+	margin: 0;
+	padding: 0;
+	color: #a6abcc;
+	box-sizing: border-box;
+}
+
+/* === Yasb Bar === */
+.yasb-bar {
+	margin: 0;
+	padding: 0;
+	backdrop-filter: blur(12px);
+	background-color: rgba(36, 39, 58, 0.7);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* === Widget Base Styles === */
+.widget {
+	background-color: rgba(255, 255, 255, 0.05);
+	padding: 0 6px;
+	margin: 0 4px;
+	border-radius: 8px;
+	transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dark .widget {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.widget:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.widget .label {
+	padding: 2px 4px;
+	color: #cad3f5;
+}
+.widget .label.alt {
+	padding: 0px 8px;
+}
+.icon {
+	font-size: 16px;
+	color: #cad3f5;
+}
+
+/* === Clock Widget === */
+.clock-widget {
+	padding: 0 10px;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.06);
+	transition: background-color 0.2s ease;
+}
+.clock-widget:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+.clock-widget .label {
+	color: #cad3f5;
+	font-weight: 600;
+}
+
+/* === Volume Widget === */
+.volume-widget {
+	padding: 0 10px;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.06);
+	transition: background-color 0.2s ease;
+	display: flex;
+	align-items: center;
+}
+.volume-widget:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+.volume-widget .label, .volume-widget .icon {
+	color: #cad3f5;
+}
+
+/* === Weather Widget === */
+.weather-widget {
+	padding: 0 10px;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.06);
+	transition: background-color 0.2s ease;
+	display: flex;
+	align-items: center;
+}
+.weather-widget:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+.weather-widget .label, .weather-widget .icon {
+	color: #cad3f5;
+}
+
+/* === Wallpapers Widget === */
+.wallpaper-widget {
+	padding: 0 10px;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.06);
+	transition: background-color 0.2s ease;
+	display: flex;
+	align-items: center;
+}
+.wallpaper-widget:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+.wallpaper-widget .label, .wallpaper-widget .icon {
+	color: #cad3f5;
+}
+.wallpaper-widget .icon {
+	font-size: 16px;
+	margin-right: 6px;
+}
+.wallpaper-widget .preview {
+	width: 40px;
+	height: 24px;
+	border-radius: 4px;
+	background-size: cover;
+	background-position: center;
+	margin-right: 8px;
+	box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+/* === Power Menu Widget === */
+.power-menu-widget {
+	padding: 0 10px;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.06);
+	transition: background-color 0.2s ease;
+}
+.power-menu-widget:hover {
+	background-color: rgba(255, 255, 255, 0.12);
+}
+.power-menu-widget .label, .power-menu-widget .icon {
+	color: #cad3f5;
+	font-size: 14px;
+}
+
+/* Power Menu Popup */
+.power-menu-popup {
+	background-color: rgba(36, 39, 58, 0.85);
+	border-radius: 12px;
+	backdrop-filter: blur(10px);
+	padding: 12px;
+}
+.power-menu-popup .button {
+	width: 180px;
+	height: 220px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.07);
+	color: #cad3f5;
+	margin: 8px;
+	transition: all 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.power-menu-popup .button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+.power-menu-popup .button .icon {
+	font-size: 48px;
+	color: rgba(255, 255, 255, 0.7);
+	margin-bottom: 8px;
+}
+.power-menu-popup .button .label {
+	font-size: 15px;
+	color: rgba(255, 255, 255, 0.9);
+}
+.power-menu-popup .button.cancel {
+	height: 36px;
+	background-color: transparent;
+	border: 1px solid rgba(243, 139, 168, 0.8);
+}
+.power-menu-popup .button.cancel .label {
+	color: rgba(243, 139, 168, 0.95);
+}
+
+/* === Komorebi Workspaces === */
+.komorebi-workspaces {
+	margin: 0;
+	padding: 0;
+}
+.komorebi-workspaces .offline-status {
+	color: #627199;
+	font-size: 12px;
+	padding: 0 4px;
+	font-weight: 600;
+}
+.komorebi-workspaces .ws-btn {
+	border: none;
+	background-color: rgba(184, 192, 224, 0.6);
+	margin: 0 2px;
+	font-size: 12px;
+	color: #3a3e4d;
+	width: 24px;
+	height: 24px;
+	border-radius: 12px;
+	transition: background-color 0.2s ease;
+}
+.komorebi-workspaces .ws-btn:hover {
+	background-color: rgba(165, 173, 203, 0.9);
+}
+.komorebi-workspaces .ws-btn.populated {
+	background-color: rgba(165, 173, 203, 0.8);
+}
+.komorebi-workspaces .ws-btn.active {
+	color: #181926;
+	background-color: #8087a2;
+	width: 48px;
+}
+
+/* === Apps Widget === */
+.apps-widget {
+	background-color: transparent;
+}
+.apps-widget .label {
+	font-size: 15px;
+	padding: 0 4px;
+	color: #cad3f5;
+}
+.apps-widget .label:hover {
+	color: #a5b8e9;
+}
+
+/* === Menu Widget === */
+.custom-menu-widget {
+	padding: 0 10px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.07);
+}
+.custom-menu-widget .label {
+	font-weight: bold;
+	color: #cad3f5;
+}
+
+/* === WHKD Widget === */
+.whkd-widget {
+	background-color: transparent;
+	padding: 0 6px;
+}
+.whkd-widget .icon {
+	font-size: 15px;
+	color: #cad3f5;
+}
+
+/* === Taskbar Widget === */
+.taskbar-widget {
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+.taskbar-widget .app-icon {
+	padding: 0 6px;
+	margin: 0;
+}
+
+/* === Light/Dark Inversion Fix === */
+.apps-widget .label,
+.power-menu-widget .label,
+.whkd-widget .icon {
+	color: #292c3c;
+}
+.dark .apps-widget .label,
+.dark .power-menu-widget .label,
+.dark .whkd-widget .icon {
+	color: #cad3f5;
+}
+
+/* === Wallpapers Gallery Styles === */
+.wallpaper-gallery {
+	position: relative;
+	background-color: rgba(36, 39, 58, 0.9);
+	border-radius: 12px;
+	padding: 12px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+	align-items: center;
+	max-height: 480px;
+	overflow-y: auto;
+}
+
+.wallpaper-gallery .close-button {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background: transparent;
+	border: none;
+	font-size: 18px;
+	color: #f38ba8;
+	cursor: pointer;
+	padding: 4px;
+	transition: color 0.2s ease;
+	user-select: none;
+	z-index: 10;
+}
+
+.wallpaper-gallery .close-button:hover {
+	color: #ff7a93;
+}
+
+.wallpaper-gallery .wallpaper-thumb {
+	width: 220px;
+	height: 140px;
+	border-radius: 12px;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	background-size: cover;
+	background-position: center;
+}
+
+.wallpaper-gallery .wallpaper-thumb:hover {
+	transform: scale(1.04);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
