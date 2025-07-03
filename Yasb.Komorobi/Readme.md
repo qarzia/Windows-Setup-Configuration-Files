@@ -20,7 +20,7 @@ This repository contains my personal configuration for [Komorebi](https://github
 ---
 
 ## 🚀 Setup Instructions
----
+
 ### 🛠 Step 1: Enable Long Path Support
 
 Open **PowerShell as Administrator** and run:
