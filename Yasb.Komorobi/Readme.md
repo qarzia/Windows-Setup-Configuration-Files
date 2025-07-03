@@ -20,25 +20,25 @@ This repository contains my personal configuration for [Komorebi](https://github
 ---
 
 ## 🚀 Setup Instructions
-
+---
 ### 🛠 Step 1: Enable Long Path Support
 
 Open **PowerShell as Administrator** and run:
 
 ```powershell
 Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
-
+---
 🧩 Step 2: Install Komorebi + WHKD
 
 winget install LGUG2Z.komorebi
 winget install LGUG2Z.whkd
-
+---
 🔁 Step 3: Restart Terminal
 
 After installation, close and reopen your terminal. Then run:
 
 komorebic quickstart
-
+---
 💾 Step 4: Install YASB
 
     Option A – GitHub:
@@ -47,7 +47,7 @@ komorebic quickstart
     Option B – Winget:
 
 winget install --id AmN.yasb
-
+---
 🖋 Step 5: Edit Configuration
 
     Clone this repo:
@@ -97,6 +97,7 @@ https://github.com/qarzia/Windows-Setup-Configuration-Files/blob/main/Yasb.Komor
 🙏 Credits
 
     Komorebi by LGUG2Z
+---
 
     YASB by amnweb
 
