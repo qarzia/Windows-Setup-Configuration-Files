@@ -76,7 +76,6 @@ Start Komorebi:
 Install a Nerd Font from: https://www.nerdfonts.com/font-downloads
 Recommended: JetBrainsMono Nerd Font
 📸 Screenshot
-![My-Yasb-Bar-Screenshot](https://github.com/user-attachments/assets/e931a3fc-b56b-45c3-ab8e-b04cb3c319b5)
 
 https://github.com/qarzia/Windows-Setup-Configuration-Files/blob/main/Yasb.Komorobi/Screenshots/My-Yasb-Bar-Screenshot.png
 
