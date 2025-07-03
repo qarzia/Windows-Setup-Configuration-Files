@@ -1,69 +1,101 @@
-🪟 Komorebi + YASB Beginner Guide
+📁 README.md
 
-This is my personal setup for Komorebi and YASB, using the YASB 002 Dynamic theme.
+# 🪟 Komorebi + YASB Setup (Windows Tiling WM)
 
-    💙 Special thanks to Diiv for the inspiration and guidance!
-    📺 Watch their full tutorial on YouTube:
-    Diiv's Komorebi + YASB Setup Guide
+This repository contains my personal configuration for [Komorebi](https://github.com/LGUG2Z/komorebi) and [YASB (Yet Another Status Bar)](https://github.com/amnweb/yasb), including the **YASB 002 Dynamic Theme**.
 
-https://www.youtube.com/watch?v=u7Gi1fU8LTQ&list=LL&index=8
+> 🧠 Inspired by [Diiv’s YouTube tutorial](https://www.youtube.com/watch?v=u7Gi1fU8LTQ&list=LL&index=8)  
+> 💻 Tiling window management + custom status bar, right on Windows!
 
-🛠️ Step 0.1 – Enable Long Path Support (Important for Windows)
+---
 
-Open PowerShell as Administrator and run this:
+## ⚙️ Features
 
+- Full Komorebi + YASB setup
+- Nerd Font integration (JetBrainsMono)
+- Weather, volume, taskbar, workspace, and app widgets
+- Power menu with animations
+- Wallpaper gallery + auto-theming integration (optional)
+
+---
+
+## 🚀 Setup Instructions
+
+### 🛠 Step 1: Enable Long Path Support
+
+Open **PowerShell as Administrator** and run:
+
+```powershell
 Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
 
-💻 Step 0.2 – Install Komorebi + WHKD
-
-In your terminal (PowerShell or Windows Terminal), run:
+🧩 Step 2: Install Komorebi + WHKD
 
 winget install LGUG2Z.komorebi
 winget install LGUG2Z.whkd
 
-🔁 Step 0.3 – Restart Your Terminal
+🔁 Step 3: Restart Terminal
 
-Close the terminal completely and open a new one. Then, run:
+After installation, close and reopen your terminal. Then run:
 
 komorebic quickstart
 
-This will generate your initial config files and folder structure for Komorebi.
-📋 Step 0.4 – Requirements
+💾 Step 4: Install YASB
 
-    ✅ Windows 10 or 11
+    Option A – GitHub:
+    Download YASB v1.7.6
 
-    ✅ Nerd Fonts
-    Install a Nerd Font (I recommend JetBrainsMono Nerd Font) and set it as your terminal or status bar font.
-
-📦 Step 1 – Install YASB (Yet Another Status Bar)
-
-You can install it either:
-
-    Via GitHub: YASB v1.7.6 Release
-    or
-
-    Via terminal with winget:
+    Option B – Winget:
 
 winget install --id AmN.yasb
 
-🚀 Step 2 – Start Komorebi + YASB
+🖋 Step 5: Edit Configuration
 
-    Launch YASB first.
+    Clone this repo:
 
-    Then run Komorebi with:
+git clone https://github.com/your-username/komorebi-yasb-setup
+cd komorebi-yasb-setup
+
+Replace your yasb.yaml with the one in the config/ folder:
+
+    Or open it with VS Code:
+
+    code .\config\yasb_config.yaml
+
+Start Komorebi:
 
     komorebic start --whkd
 
-📝 Step 3 – Customize the Config
+📁 Files
 
-To edit your Komorebi configuration:
+    config/yasb_config.yaml – Full YAML config for YASB
 
-code .\komorebi.json
+    config/komorebi.json – [optional, add yours here]
 
-    🧠 Tip: This opens your komorebi.json in Visual Studio Code (make sure it's installed).
+🎨 Font Recommendation
 
-You can either:
+Install a Nerd Font from: https://www.nerdfonts.com/font-downloads
+Recommended: JetBrainsMono Nerd Font
+📸 Screenshot
 
-    Modify it to your preferences,
+Add a screenshot of your setup here
+🧼 Optional Apps Used
 
-    Or replace it with my configuration files
+    Obsidian
+
+    GitHub Desktop
+
+    Discord
+
+    Spotify
+
+    Firefox
+
+    Windows Terminal
+
+🙏 Credits
+
+    Komorebi by LGUG2Z
+
+    YASB by amnweb
+
+    Huge thanks to Diiv for tutorials and inspiration!
