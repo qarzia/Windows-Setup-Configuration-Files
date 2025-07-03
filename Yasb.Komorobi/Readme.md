@@ -78,7 +78,7 @@ Recommended: JetBrainsMono Nerd Font
 📸 Screenshot
 
 https://github.com/qarzia/Windows-Setup-Configuration-Files/blob/main/Yasb.Komorobi/Screenshots/My-Yasb-Bar-Screenshot.png
-Add a screenshot of your setup here
+
 
 🧼 Optional Apps Used
 
