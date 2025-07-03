@@ -67,9 +67,9 @@ Start Komorebi:
 
 📁 Files
 
-    config/yasb_config.yaml – Full YAML config for YASB
+    config/yasb_config.yaml – https://github.com/qarzia/Windows-Setup-Configuration-Files/blob/main/Yasb.Komorobi/config.yaml
 
-    config/komorebi.json – [optional, add yours here]
+    config/komorebi.json    – https://github.com/qarzia/Windows-Setup-Configuration-Files/blob/main/Yasb.Komorobi/komorebi.json
 
 🎨 Font Recommendation
 
