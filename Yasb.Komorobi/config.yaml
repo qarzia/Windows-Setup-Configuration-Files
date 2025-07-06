@@ -1,19 +1,20 @@
-# Enable live reload for styles and config when changes are saved
+### 📄 `config/yasb_config.yaml`
+
+# yaml
+
 watch_stylesheet: true
 watch_config: true
 debug: false
 
-# Komorebi tiling window manager commands
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop --whkd"
   reload_command: "komorebic stop --whkd && komorebic start --whkd"
 
-# Bar configuration
 bars:
   primary-bar:
     enabled: true
-    screens: ["*"]  # Show on all screens
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -23,6 +24,7 @@ bars:
       acrylic: false
       dark_mode: false
       round_corners: false
+      border_color: null
     window_flags:
       always_on_top: false
       windows_app_bar: true
@@ -39,66 +41,78 @@ bars:
       center: ["komorebi_workspaces"]
       right: ["taskbar", "whkd", "wallpapers", "weather", "volume", "clock", "power_menu"]
 
-# Widget definitions
 widgets:
-
-  # Shows the currently active window
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
       label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
       label_icon: true
       label_icon_size: 14
       max_length: 36
       max_length_ellipsis: "..."
       monitor_exclusive: true
 
-  # Clock widget
   clock:
     type: "yasb.clock.ClockWidget"
     options:
       label: "{%H:%M %a}"
       label_alt: "{%A, %d %B %Y %H:%M}"
+      timezones: []
 
-  # Komorebi workspace switcher
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
+      label_offline: "\u26a1 Offline"
       label_workspace_btn: "{index}"
+      label_workspace_active_btn: "{index}"
+      label_workspace_populated_btn: "{index}"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: false
       animation: true
-      container_padding: {top: 0, left: 1, bottom: 0, right: 1}
+      container_padding:
+        top: 0
+        left: 1
+        bottom: 0
+        right: 1
 
-  # Weather widget (API key required)
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
       label_alt: "{location}: Min {min_temp}, Max {max_temp}, Humidity {humidity}"
-      api_key: "YOUR_API_KEY_HERE"
+      api_key: "3bf4cf9a7c3f40d6b31174128242807"
       update_interval: 1200
-      location: "Your City Name Here"
+      hide_decimal: true
+      location: "Germany Delmenhorst 27749"
+      callbacks:
+        on_left: "toggle_label"
 
-  # Volume control
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
       label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
       volume_icons:
-        - "\ueee8"  # Muted
-        - "\uf026"  # 0-10%
-        - "\uf027"  # 11-60%
-        - "\uf028"  # 61-100%
+        - "\ueee8"
+        - "\uf026"
+        - "\uf027"
+        - "\uf028"
       callbacks:
         on_right: "exec cmd.exe /c start ms-settings:sound"
 
-  # Power menu
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
       label: "\uf011"
       uptime: true
+      blur: false
       blur_background: true
       animation_duration: 200
+      button_row: 5
       buttons:
         shutdown: ["\uf011", "Shut Down"]
         restart: ["\uead2", "Restart"]
@@ -107,60 +121,59 @@ widgets:
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
 
-  # Application launcher bar
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
-      container_padding: {top: 0, left: 0, bottom: 0, right: 0}
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
       label: "{data}"
       app_list:
-        # 🗑️ Recycle Bin
         - {icon: "\uf2ed", launch: "cmd.exe /c start shell:RecycleBinFolder"}
-        # 🔔 Notification Center
         - {icon: "\uf0a2", launch: "cmd.exe /c start ms-actioncenter:"}
-        # ⚙️ Quick Settings, Search, Task Manager, Terminal
         - {icon: "\ueb51", launch: "quick_settings"}
         - {icon: "\uf422", launch: "search"}
         - {icon: "\ueb03", launch: "cmd /c Taskmgr"}
         - {icon: "\uf489", launch: "wt"}
-
-        # 🧑‍💻 Common Apps (Update paths as needed)
-        - {icon: "\uf1ff", launch: "C:\\Users\\YourUsername\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe"}
+        - {icon: "\uf1ff", launch: "C:\\Users\\Robil\\AppData\\Local\\Discord\\Update.exe --processStart Discord.exe"}
         - {icon: "\udb80\ude39", launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe"}
-        - {icon: "\uf408", launch: "C:\\Users\\YourUsername\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe"}
-        - {icon: "\uf1bc", launch: "C:\\Users\\YourUsername\\AppData\\Roaming\\Spotify\\Spotify.exe"}
+        - {icon: "\uf408", launch: "C:\\Users\\Robil\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe"}
+        - {icon: "\uf1bc", launch: "C:\\Users\\Robil\\AppData\\Roaming\\Spotify\\Spotify.exe"}
         - {icon: "\uf07b", launch: "explorer.exe"}
-        - {icon: "\uf48a", launch: "C:\\Users\\YourUsername\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"}
+        - {icon: "\uf48a", launch: "C:\\Users\\Robil\\AppData\\Local\\Programs\\Obsidian\\Obsidian.exe"}
 
-  # WHKD (hotkey daemon) icon
   whkd:
     type: "yasb.whkd.WhkdWidget"
     options:
       label: "<span>\uf11c</span>"
 
-  # "Menu" text button
   menu_widget:
     type: "yasb.custom.CustomWidget"
     options:
       label: "Menu"
+      label_alt: "Menu"
       class_name: "custom-menu-widget"
       callbacks:
         on_left: "exec start_menu"
 
-  # Taskbar (running apps)
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
       animation:
         enabled: true
       icon_size: 16
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
 
-  # Wallpaper picker
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span>\udb83\ude09</span>"
-      image_path: "C:\\Users\\YourUsername\\Pictures\\Wallpapers"
+      image_path: "C:\\Users\\Robil\\Pictures\\Wallpapers"
       change_automatically: false
       update_interval: 60
       gallery:
